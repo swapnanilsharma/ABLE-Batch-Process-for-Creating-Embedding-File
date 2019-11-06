@@ -17,6 +17,7 @@ import requests
 from pytube import YouTube
 from os.path import isfile, join
 from tqdm import tqdm
+
 from framework.getDataFromES.getDataFromESAbstract import getDataFromESAbstract
 from framework.commonConstants import *
 from framework import commonLog
@@ -24,7 +25,6 @@ from framework import commonExceptions
 from framework.subModule.channelClass import channelClass
 from framework.subModule.ESOperationClass import ESOperationClass
 from framework.getResponseFromCSApi import getResponseFromCSApi
-
 
 # ****************************************************************************
 # Constants

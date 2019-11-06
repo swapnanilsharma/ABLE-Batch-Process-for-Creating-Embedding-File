@@ -81,6 +81,7 @@ class dfColumnToVect(dfColumnToVectAbstract):
         return self.dataframe
 
     def addKeywordVectorTodf(self):
+        self.dataframe[KEYWORDS_VECTOR] = EMPTY
         for idx in range(len(self.dataframe)):
             self.dataframe.loc[idx, KEYWORDS_VECTOR] = self.sentToVect(self.dataframe.loc[idx, KEYWORDS])
         return self.dataframe

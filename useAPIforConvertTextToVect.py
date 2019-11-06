@@ -8,14 +8,14 @@ app.sessionVariable=0
 # API to encode a list of strings to USE vector of 512 dimensions
 @app.route('/encoder',  methods=['POST'])
 def encoder():
-    # Function so that one session can be called multiple times. 
-    # Useful while multiple calls need to be done for embedding. 
+    # Function so that one session can be called multiple times.
+    # Useful while multiple calls need to be done for embedding.
     import tensorflow as tf
     import tensorflow_hub as hub
     import numpy as np
     sentToEncode=request.args.getlist('sentToEncode')
 
-    def embed_useT(module): 
+    def embed_useT(module):
         config = tf.ConfigProto()
         config.gpu_options.allow_growth = True
 
@@ -30,7 +30,7 @@ def encoder():
 
     #It takes similarity matrix (generated from sentence encoder) as input and gives index of redundant statements
     def redundant_sent_idx(sim_matrix, threshold=0.8):
-        dup_idx = [] 
+        dup_idx = []
         for i in range(sim_matrix.shape[0]):
             if i not in dup_idx:
                 tmp = [t+i+1 for t in list(np.where(sim_matrix[i][i+1:] > threshold)[0])]
@@ -43,7 +43,7 @@ def encoder():
     #######
 
     if app.sessionVariable==0:
-        app.embed_fn = embed_useT("https://tfhub.dev/google/universal-sentence-encoder-large/3")  # (module='./USE')  
+        app.embed_fn = embed_useT("downloadedModel/useModel/")
     embed_message = app.embed_fn(sentToEncode)
     return jsonify(embed_message.tolist())
 

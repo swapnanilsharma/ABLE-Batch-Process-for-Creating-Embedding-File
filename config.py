@@ -10,8 +10,8 @@ kpDBPrivateIP         = '80.1.0.9'
 #ESCompositesearchPath = "C:/Users/Swapnanil/Machine Learning/PwC/Elastic Data from NUIS/compositesearch_new.json"
 #rootDir               = 'C:/PWC/PWC'
 #validChannelsName     = ['visakhapatnam', 'pcmc', 'nulp']
-ESCompositesearchPath = "C:/PWC/devNULP/devNULPcomposite.json"
-rootDir               = 'C:/PWC/devNULP'
+ESCompositesearchPath = "C:/PWC/devNULP/devNULP/devNULPcomposite.json"
+rootDir               = 'C:/PWC/devNULP/devNULP'
 validChannelsName     = ['nuis', 'advisory', 'pwc_test2', 'channel25july', 'nulp', 'niua',
                          'advisory1', 'pcmc', 'pwc_test3', 'pwc_test', 'pwc_test1', 'mankind', 'tax']
 

@@ -17,7 +17,10 @@ def getSummarizeData(dfPath, downloadPath, encoderURL, masterDataframeWithSummar
     dataObject = contentSummarization(dataframe=df, encoderURL=encoderURL)
     df = contentSummarization.writingSummaryIntoDataframe1(dataObject)
     df.to_pickle(join(downloadPath, masterDataframeWithSummary + PKL))
+
     df = contentSummarization.writingSummaryIntoDataframe2(dataObject)
+    dataObject = contentSummarization(dataframe=df, encoderURL=encoderURL)
+    df = contentSummarization.generatingKeywords(dataObject)
     df.to_pickle(join(downloadPath, masterDataframeWithSummary + PKL))
 
 if __name__ == '__main__':
