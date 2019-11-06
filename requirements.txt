@@ -1,0 +1,8 @@
+flask
+tensorflow
+tensorflow_hub
+pandas
+sklearn
+spacy
+tqdm
+simplejson
