@@ -4,6 +4,7 @@
 # @brief constants used by NLP Search Framework
 
 IDENTIFIER               = 'identifier'
+MEDIUM                   = 'medium'
 SOURCE                   = '_source'
 OBJECT_TYPE              = 'objectType'
 VAL_CHANNEL              = 'Channel'
@@ -44,7 +45,7 @@ pdfDir                   = 'PDF'
 videoDir                 = 'VIDEO'
 ekstepDir                = 'EKSTEP'
 CSRESPONSE               = 'Content Search API response'
-APPLICATION_JSON         = 'Application/json'
+APPLICATION_JSON         = 'application/json'
 dOfVector                = 512
 FULL_CONTENT_VECTOR      = 'Full Content Vector'
 CONTENT_SUMMARY_1_VECTOR = 'Content Summary1 Vector'
@@ -57,6 +58,8 @@ EMPTY                    = ''
 DOT                      = '.'
 DUMMY_CHANNEL            = "0127364538036797443"
 DUMMY_BOARD              = "NULP 4 NULP"
+NO_CACHE                 = 'no-cache'
+taxonomyLevel = ['board', 'gradeLevel', 'subject', 'medium']
 
 
 
