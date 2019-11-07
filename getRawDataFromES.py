@@ -11,17 +11,16 @@ from config import rootDir, basicDataframe, apiUrl, contentJsonFileName, limit
 
 def getRawDataFromES(downloadPath, masterDataframeName, apiUrl):
     dataObject = getDataFromES(apiUrl=apiUrl)
-    '''
     dataObject.createJson(rootDir=rootDir,
                           contentJsonFileName=contentJsonFileName,
                           limit=limit,
                           mimeType=APPLICATION_PDF)
-    '''
     contentList = pd.read_json(join(rootDir, contentJsonFileName)).loc['content', 'result']
-    dataObject.extractRawContent(downloadPath=rootDir, contentList=contentList)
-
-    df = dataObject.buildMasterDataframe(contentList=contentList)
-    df.to_pickle(join(downloadPath, masterDataframeName + PKL))
+    dataObject.extractRawContent(downloadPath=rootDir,
+                                 contentList=contentList)
+    dataObject.buildMasterDataframe(contentList=contentList,
+                                    downloadPath=rootDir,
+                                    masterDataframeName=masterDataframeName)
 
 if __name__ == '__main__':
 	getRawDataFromES(downloadPath=rootDir,
